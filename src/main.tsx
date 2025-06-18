@@ -2,7 +2,6 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
-import Login from './pages/login/login.tsx'
 import Welcome from './pages/welcome/welcome.tsx'
 import NotFoundPage from './pages/not-found/not-found.tsx'
 
@@ -14,7 +13,6 @@ import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 
 const router = createBrowserRouter([
   { path: '/app', element: <App /> },
-  { path: '/login', element: <Login /> },
   { path: '/welcome', element: <Welcome /> },
   { path: '*', element: <NotFoundPage /> },
 ])

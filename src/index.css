@@ -13,6 +13,20 @@
   --color-gold-800: #88510b;
   --color-gold-900: #734210;
   --color-gold-950: #432205;
+
+
+  --color-geebung-50: #faf6ec;
+  --color-geebung-100: #f4e7cd;
+  --color-geebung-200: #e9d09f;
+  --color-geebung-300: #ddb067;
+  --color-geebung-400: #d09038;
+  --color-geebung-500: #c27e30;
+  --color-geebung-600: #a76227;
+  --color-geebung-700: #864722;
+  --color-geebung-800: #703b23;
+  --color-geebung-900: #603323;
+  --color-geebung-950: #371911;
+  
 }
 
 :root {

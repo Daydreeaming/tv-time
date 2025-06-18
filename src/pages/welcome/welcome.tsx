@@ -7,21 +7,30 @@ import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 import CheckCircleOutlinedIcon from '@mui/icons-material/CheckCircleOutlined';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import HasAccount from '../pop-ups/has-account/has-account';
-
-
+import Login from '../pop-ups/login/login';
+import CreateUser from '../pop-ups/create-user/create-user';
 
 function Welcome() {
     const [index, setIndex] = React.useState(0);
-    const [open, setOpen] = React.useState(false);
+
+    const [openHasAccount, setOpenHasAccount] = React.useState(false);
+    const [openLogin, setOpenLogin] = React.useState(false);
+    const [openSignUp, setOpenSignUp] = React.useState(false);
 
     const handleClickOpen = () => {
-        setOpen(true);
+        setOpenHasAccount(true);
     };
 
-    const handleClose = () => {
-        setOpen(false);
+    const handleSignIn = () => {
+        setOpenLogin(true);
+        setOpenHasAccount(false);
     };
 
+    const handleSignUp = () => {
+        setOpenSignUp(true);
+        setOpenHasAccount(false);        
+    };
+    
     React.useEffect(() => {
         const timer = setInterval(() => {
             setIndex((prevIndex) => (prevIndex + 1) % 5);
@@ -64,7 +73,9 @@ function Welcome() {
                 <Button onClick={handleClickOpen} className="text-1xl bg-gold-500 text-black font-nunito font-bold px-8 py-2 rounded-full shadow hover:brightness-95 transition">
                     CADASTRAR-SE/FAZER LOGIN
                 </Button>
-                {open && <HasAccount open={open} onClose={() => setOpen(false)} />}
+                {<HasAccount open={openHasAccount} onSignIn={handleSignIn} onSignUp={handleSignUp} onClose={() => setOpenHasAccount(false)} />}
+                {<Login open={openLogin} onClose={() => setOpenLogin(false)} />}
+                {<CreateUser open={openSignUp} onClose={() => setOpenSignUp(false)} />}
             </div>
         </div>
     )
